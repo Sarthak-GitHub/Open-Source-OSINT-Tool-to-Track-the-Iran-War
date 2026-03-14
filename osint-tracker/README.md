@@ -1,12 +1,12 @@
-# 🛰️ OSINT Military Movement Tracker
+# OSINT Military Movement Tracker
 
-> **Track geopolitical events using only public data — the same techniques used by Bellingcat, journalists, and open-source researchers worldwide.**
+> **Track geopolitical events using only public data, the same techniques used by Bellingcat, journalists, and open-source researchers worldwide.**
 
-⚠️ **Honest Status**: This is an **educational proof-of-concept**. Some data sources require API keys; this README tells you exactly which ones and what to expect without them.
+**Honest Status**: This is an **educational proof-of-concept**. Some data sources require API keys; this README tells you exactly which ones and what to expect without them.
 
 ---
 
-## ⚠️ Disclaimer
+## Disclaimer!
 
 This tool uses **only legally and publicly available data sources**. It does not access any classified, private, or restricted information. All data sources used are open APIs, public feeds, and freely accessible databases. This project is strictly for **educational, research, and journalistic purposes**.
 
@@ -18,10 +18,10 @@ OSINT Tracker is a Python pipeline that correlates signals from multiple public 
 
 | Layer | Data Source | What It Detects | Works Without API Key? |
 |---|---|---|---|
-| 🌐 **Internet** | IODA API (Georgia Tech) | Internet blackouts, connectivity drops | ✅ **YES** — Always works |
-| 📰 **News Signals** | NewsAPI | Keyword surge detection in media coverage | ⚠️ **Free tier** — 2 min signup required |
-| ✈️ **Aircraft** | OpenSky API | Military flight patterns, unusual activity | ⚠️ **Free tier** — Registration required |
-| 📡 **Conflict Events** | ACLED API | Verified armed conflict events by location | ❌ **Demo mode only** — Approval takes 1-2 days |
+| 🌐 **Internet** | IODA API (Georgia Tech) | Internet blackouts, connectivity drops | **YES** — Always works |
+| 📰 **News Signals** | NewsAPI | Keyword surge detection in media coverage | **Free tier** — 2 min signup required |
+| ✈️ **Aircraft** | OpenSky API | Military flight patterns, unusual activity | **Free tier** — Registration required |
+| 📡 **Conflict Events** | ACLED API | Verified armed conflict events by location | **Demo mode only** — Approval takes 1-2 days |
 
 When correlated together, these signals tell a story that no single source can.
 
@@ -31,16 +31,16 @@ When correlated together, these signals tell a story that no single source can.
 
 | Source | Free Tier | API Key | Time to Functional | Notes |
 |--------|-----------|---------|-------------------|-------|
-| **IODA** (Internet outages) | ✅ Full API | ❌ None | Immediately | 100% free, no registration |
-| **NewsAPI** | ✅ Free tier | ✅ Quick signup | ~2 minutes | 100 requests/day, but sufficient for monitoring |
-| **OpenSky Network** (Aircraft) | ✅ Free mode | ✅ Quick signup | ~2 minutes | Recently switched from ADS-B to this—works reliably |
-| **ACLED** (Conflict events) | ❌ Demo only | ✅ Registration | 1–2 days | Approval required; demo data provided while waiting |
+| **IODA** (Internet outages) | Full API | None | Immediately | 100% free, no registration |
+| **NewsAPI** |Free tier | Quick signup | ~2 minutes | 100 requests/day, but sufficient for monitoring |
+| **OpenSky Network** (Aircraft) | Free mode | Quick signup | ~2 minutes | Recently switched from ADS-B to this—works reliably |
+| **ACLED** (Conflict events) | Demo only | Registration | 1–2 days | Approval required; demo data provided while waiting |
 
 **TL;DR**: Clone the repo, run `python main.py --demo` **right now** with zero setup. Realistic OSINT requires one 5-minute signup (NewsAPI).
 
 ---
 
-## 🏗️ Project Structure
+## Project Structure
 
 ```
 osint-tracker/
@@ -83,14 +83,12 @@ osint-tracker/
 
 ---
 
-## 🚀 Quick Start
-
-### ⚡ Super Quick (No Setup)
+### Super Quick (No Setup)
 
 Try the demo with cached real data from a recent conflict:
 
 ```bash
-git clone https://github.com/yourusername/osint-tracker.git
+git clone git@github.com:Sarthak-GitHub/Open-Source-OSINT-Tool-to-Track-the-Iran-War.git
 cd osint-tracker
 
 python -m venv venv
@@ -105,7 +103,7 @@ python main.py --region iran --days 7 --demo
 
 ---
 
-### 📋 For Realistic OSINT (5 min setup)
+### For Realistic OSINT (5 min setup)
 
 Get real data from IODA (always works) + real recent news coverage:
 
@@ -122,7 +120,7 @@ python main.py --region iran --days 7
 
 ---
 
-### 🔧 Full Setup (With All Sources)
+### Full Setup (With All Sources)
 
 1. Get your API keys:
    - **NewsAPI** (free): [newsapi.org](https://newsapi.org/register) — instant
@@ -143,7 +141,7 @@ python main.py --region iran --days 7
 
 ---
 
-### 🐳 Docker
+### Docker
 
 ```bash
 docker-compose up --build
@@ -154,7 +152,7 @@ docker run -e DEMO_MODE=1 osint-tracker python main.py --region iran --demo
 
 ---
 
-## ⚙️ Configuration
+## Configuration
 
 ### Environment Variables (`.env`)
 
@@ -202,18 +200,18 @@ python main.py --region strait_of_hormuz --days 30
 
 ---
 
-## � Graceful Degradation — Missing API Keys Don't Break Anything
+## Graceful Degradation | Missing API Keys Don't Break Anything
 
 If you don't have API keys set, the tool **doesn't crash**—it intelligently falls back:
 
 ```
 $ python main.py --region iran --days 7
 
-📡 Collecting signals from public sources...
-  ✅ IODA Internet Data — Real live data from Georgia Tech
-  ⚠️  NewsAPI — Missing API key, using cached demo data
-  ⚠️  ACLED Conflict — Missing credentials, using demo data
-  ❌ OpenSky Aircraft — Missing credentials, skipping
+Collecting signals from public sources...
+   IODA Internet Data — Real live data from Georgia Tech
+   NewsAPI — Missing API key, using cached demo data
+   ACLED Conflict — Missing credentials, using demo data
+   OpenSky Aircraft — Missing credentials, skipping
 
 ═══════════════════════════════════════════════════
         OSINT TRACKER — SIGNAL REPORT
@@ -222,13 +220,13 @@ $ python main.py --region iran --days 7
 
   LAYER              DATA SOURCE         SIGNAL             SCORE
   ──────────────────────────────────────────────────────────────
-  🌐 Internet        ✅ IODA (real)      Connectivity ↓     8.3/10
-  📰 News            ⚠️  Demo cached     Keyword spike 4.2x  ⚠️
-  📡 Conflict        ⚠️  Demo cached     Explosions +180     ⚠️
-  ✈️ Aircraft        ❌ Requires key     (Skipped)           —
+  Internet        IODA (real)      Connectivity ↓     8.3/10
+  News            Demo cached     Keyword spike 4.2x  Synthetic/cached
+  Conflict        Demo cached     Explosions +180     Synthetic/cached
+  Aircraft        Requires key     (Skipped)           —
 
 ═══════════════════════════════════════════════════
-  Legend: ✅ Real data | ⚠️  Synthetic/cached | ❌ Not available
+  Legend: Real data |  Synthetic/cached | - Not available
 ═══════════════════════════════════════════════════
 ```
 
@@ -236,7 +234,7 @@ $ python main.py --region iran --days 7
 
 ---
 
-## 📊 Example Output (Full Setup)
+## Example Output (Full Setup)
 
 ```
 ═══════════════════════════════════════════════════════
@@ -260,7 +258,7 @@ Raw JSON: data/processed/iran_20260314.json
 
 ---
 
-## 🧠 The Methodology
+## The Methodology
 
 See [`docs/methodology.md`](docs/methodology.md) for a full explanation of:
 - How OSINT analysts correlate multi-source signals
@@ -270,7 +268,7 @@ See [`docs/methodology.md`](docs/methodology.md) for a full explanation of:
 
 ---
 
-## 📚 Inspiration & Credits
+## Inspiration & Credits
 
 - [Bellingcat](https://www.bellingcat.com/) — the gold standard of OSINT journalism
 - [ACLED](https://acleddata.com/) — Armed Conflict Location & Event Data Project
@@ -280,7 +278,7 @@ See [`docs/methodology.md`](docs/methodology.md) for a full explanation of:
 
 ---
 
-## ❓ FAQ
+## FAQ
 
 **Q: Can I really use this without paying?**  
 A: Yes. IODA is 100% free. NewsAPI free tier (100 requests/day) is sufficient for monitoring. Add those two, and you have real signal correlation working.
@@ -304,6 +302,6 @@ A: Yes. It uses only publicly available data via official APIs. See the disclaim
 
 ---
 
-## 📄 License
+## License
 
 MIT License — use it, build on it, give credit.
