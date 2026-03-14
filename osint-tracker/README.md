@@ -12,16 +12,16 @@ This tool uses **only legally and publicly available data sources**. It does not
 
 ---
 
-## 🔍 What It Does
+## What It Does
 
 OSINT Tracker is a Python pipeline that correlates signals from multiple public data sources to detect and visualize patterns of military/geopolitical activity:
 
 | Layer | Data Source | What It Detects | Works Without API Key? |
 |---|---|---|---|
-| 🌐 **Internet** | IODA API (Georgia Tech) | Internet blackouts, connectivity drops | **YES** — Always works |
-| 📰 **News Signals** | NewsAPI | Keyword surge detection in media coverage | **Free tier** — 2 min signup required |
-| ✈️ **Aircraft** | OpenSky API | Military flight patterns, unusual activity | **Free tier** — Registration required |
-| 📡 **Conflict Events** | ACLED API | Verified armed conflict events by location | **Demo mode only** — Approval takes 1-2 days |
+| **Internet** | IODA API (Georgia Tech) | Internet blackouts, connectivity drops | **YES** — Always works |
+| **News Signals** | NewsAPI | Keyword surge detection in media coverage | **Free tier** — 2 min signup required |
+| **Aircraft** | OpenSky API | Military flight patterns, unusual activity | **Free tier** — Registration required |
+| **Conflict Events** | ACLED API | Verified armed conflict events by location | **Demo mode only** — Approval takes 1-2 days |
 
 When correlated together, these signals tell a story that no single source can.
 
