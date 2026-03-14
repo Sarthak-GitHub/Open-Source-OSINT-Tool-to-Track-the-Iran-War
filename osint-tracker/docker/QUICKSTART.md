@@ -1,4 +1,4 @@
-# 🐳 Docker Quick-Start Guide
+# Docker Quick-Start Guide
 
 Everything you need to run OSINT Tracker without installing Python, pip, or any dependencies locally. Just Docker.
 
@@ -11,7 +11,7 @@ Everything you need to run OSINT Tracker without installing Python, pip, or any 
 
 ---
 
-## Step 1 — Clone and Configure
+## Step 1 : Clone and Configure
 
 ```bash
 git clone https://github.com/yourusername/osint-tracker.git
@@ -38,7 +38,7 @@ ACLED_EMAIL=your_email@example.com
 
 ---
 
-## Step 2 — Build
+## Step 2 : Build
 
 ```bash
 make build
@@ -49,7 +49,7 @@ This builds a ~180MB multi-stage Docker image. Only needed once
 
 ---
 
-## Step 3 — Run
+## Step 3 : Run
 
 ```bash
 # Default: Iran, last 7 days
@@ -71,7 +71,7 @@ docker-compose run --rm osint-run --list-regions
 
 ---
 
-## Step 4 — View the Map
+## Step 4 : View the Map
 
 ```bash
 make open-map
@@ -138,7 +138,7 @@ make all-regions
 ```
 
 This spins up three containers simultaneously — Iran, Israel, and
-Strait of Hormuz — each producing its own scored report and HTML map.
+Strait of Hormuz each producing its own scored report and HTML map.
 
 Output files will be in `data/processed/`:
 ```
