@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_88ad54633f17db1df83cc5aea9d69e93 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+    <script src="https://cdn.jsdelivr.net/gh/python-visualization/folium@main/folium/templates/leaflet_heat.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/leaflet.markercluster.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.Default.css"/>
+</head>
+<body>
+    
+    
+        <div style="
+            position: fixed;
+            bottom: 30px; left: 30px; z-index: 1000;
+            background: rgba(0,0,0,0.85);
+            color: white;
+            padding: 15px 20px;
+            border-radius: 8px;
+            border: 1px solid #ffaa00;
+            font-family: monospace;
+            font-size: 13px;
+            min-width: 240px;
+        ">
+            <div style="font-size:15px; font-weight:bold; color:#ffaa00; margin-bottom:8px;">
+                🛰️ OSINT TRACKER
+            </div>
+            <div>Region: <b>Iran</b></div>
+            <div>Composite Score: <b style="color:#ffaa00">6.2 / 10</b></div>
+            <div style="margin-top:6px; color:#ffaa00; font-weight:bold">🟡 ELEVATED ACTIVITY</div>
+            <hr style="border-color:#444; margin:8px 0">
+            <div style="font-size:11px; color:#aaa;">
+                🔴 Red markers = Explosions/Battles<br>
+                🟠 Orange markers = Other conflict events<br>
+                ✈ Aircraft = ISR / Military flights<br>
+                Heatmap = Conflict intensity
+            </div>
+            <div style="font-size:10px; color:#666; margin-top:8px;">
+                Data: ACLED · IODA · ADS-B Exchange · NewsAPI<br>
+                Generated: 2026-03-14 13:04 UTC
+            </div>
+        </div>
+        
+    
+            <div class="folium-map" id="map_88ad54633f17db1df83cc5aea9d69e93" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_88ad54633f17db1df83cc5aea9d69e93 = L.map(
+                "map_88ad54633f17db1df83cc5aea9d69e93",
+                {
+                    center: [32.4, 53.7],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 6,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_6ef60c7410974643e89676c3a3c939c9 = L.tileLayer(
+                "https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 20,
+  "maxNativeZoom": 20,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"https://carto.com/attributions\"\u003eCARTO\u003c/a\u003e",
+  "subdomains": "abcd",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_6ef60c7410974643e89676c3a3c939c9.addTo(map_88ad54633f17db1df83cc5aea9d69e93);
+        
+    
+            var rectangle_195e0cb635a7c5a7ff5556cd00943d59 = L.rectangle(
+                [[25.0, 44.0], [39.8, 63.3]],
+                {"bubblingMouseEvents": true, "color": "#00ffff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#00ffff", "fillOpacity": 0.03, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1}
+            ).addTo(map_88ad54633f17db1df83cc5aea9d69e93);
+        
+    
+            rectangle_195e0cb635a7c5a7ff5556cd00943d59.bindTooltip(
+                `<div>
+                     Monitoring zone: Iran
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var heat_map_2284b32a61707ee85c522438f5cfb373 = L.heatLayer(
+                [[35.6892, 51.389, 1.0], [32.6546, 51.668, 1.0], [33.7219, 51.8668, 1.0]],
+                {
+  "minOpacity": 0.5,
+  "maxZoom": 18,
+  "radius": 25,
+  "blur": 15,
+  "gradient": {
+  "0.2": "blue",
+  "0.5": "orange",
+  "1.0": "red",
+},
+}
+            );
+        
+    
+            heat_map_2284b32a61707ee85c522438f5cfb373.addTo(map_88ad54633f17db1df83cc5aea9d69e93);
+        
+    
+            var marker_cluster_a6d8d5857a506e2b6bf5b14653da7363 = L.markerClusterGroup(
+                {
+}
+            );
+        
+    
+            var circle_marker_a3c9e010fae6427fbbc62831cead6555 = L.circleMarker(
+                [35.6892, 51.389],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_a6d8d5857a506e2b6bf5b14653da7363);
+        
+    
+        var popup_df99c405697f8f8564a1f65c90808254 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_d168a0b755bb7e3d4702697e9cb1f157 = $(`<div id="html_d168a0b755bb7e3d4702697e9cb1f157" style="width: 100.0%; height: 100.0%;"><b>Explosions/Remote violence</b><br>📍 Tehran<br>📅 2026-02-28<br>💀 Fatalities: 0<br>📝 Airstrike reported</div>`)[0];
+                popup_df99c405697f8f8564a1f65c90808254.setContent(html_d168a0b755bb7e3d4702697e9cb1f157);
+            
+        
+
+        circle_marker_a3c9e010fae6427fbbc62831cead6555.bindPopup(popup_df99c405697f8f8564a1f65c90808254)
+        ;
+
+        
+    
+    
+            circle_marker_a3c9e010fae6427fbbc62831cead6555.bindTooltip(
+                `<div>
+                     Tehran — Explosions/Remote violence
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_757db2d569d32c67295daa4ff6d8b91d = L.circleMarker(
+                [32.6546, 51.668],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_a6d8d5857a506e2b6bf5b14653da7363);
+        
+    
+        var popup_ec63c3c79c8aee68cffe8c200d1386c1 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_1e235a03163871af4ccd41853809a15e = $(`<div id="html_1e235a03163871af4ccd41853809a15e" style="width: 100.0%; height: 100.0%;"><b>Explosions/Remote violence</b><br>📍 Isfahan<br>📅 2026-02-28<br>💀 Fatalities: 0<br>📝 Nuclear facility area</div>`)[0];
+                popup_ec63c3c79c8aee68cffe8c200d1386c1.setContent(html_1e235a03163871af4ccd41853809a15e);
+            
+        
+
+        circle_marker_757db2d569d32c67295daa4ff6d8b91d.bindPopup(popup_ec63c3c79c8aee68cffe8c200d1386c1)
+        ;
+
+        
+    
+    
+            circle_marker_757db2d569d32c67295daa4ff6d8b91d.bindTooltip(
+                `<div>
+                     Isfahan — Explosions/Remote violence
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_69576a6826580cbb16dcf9051ad6a262 = L.circleMarker(
+                [33.7219, 51.8668],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_a6d8d5857a506e2b6bf5b14653da7363);
+        
+    
+        var popup_de10e54d3748e4add61b5a7eb1a540c5 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_468c5e8c6954fd4470493c1e9c8bc028 = $(`<div id="html_468c5e8c6954fd4470493c1e9c8bc028" style="width: 100.0%; height: 100.0%;"><b>Explosions/Remote violence</b><br>📍 Natanz<br>📅 2026-02-28<br>💀 Fatalities: 0<br>📝 Enrichment site</div>`)[0];
+                popup_de10e54d3748e4add61b5a7eb1a540c5.setContent(html_468c5e8c6954fd4470493c1e9c8bc028);
+            
+        
+
+        circle_marker_69576a6826580cbb16dcf9051ad6a262.bindPopup(popup_de10e54d3748e4add61b5a7eb1a540c5)
+        ;
+
+        
+    
+    
+            circle_marker_69576a6826580cbb16dcf9051ad6a262.bindTooltip(
+                `<div>
+                     Natanz — Explosions/Remote violence
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            marker_cluster_a6d8d5857a506e2b6bf5b14653da7363.addTo(map_88ad54633f17db1df83cc5aea9d69e93);
+        
+    
+            var feature_group_2dd8ce1583d8c2824c8f41dd597bc06c = L.featureGroup(
+                {
+}
+            );
+        
+    
+            var marker_1e512ec9e1828927824c70b651dc55d6 = L.marker(
+                [26.8, 56.2],
+                {
+}
+            ).addTo(feature_group_2dd8ce1583d8c2824c8f41dd597bc06c);
+        
+    
+            var div_icon_5ce3af692051db41d586bc5d00dbd96b = L.divIcon({
+  "html": "\u003cdiv style=\"font-size:20px;\"\u003e\u2708\u003c/div\u003e",
+  "iconSize": [20, 20],
+  "className": "empty",
+});
+        
+    
+        var popup_1e1a6fb4e5c33cf2bf1dca150623bec6 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_ef387a33d52b4fb9742dbf0a957e1a12 = $(`<div id="html_ef387a33d52b4fb9742dbf0a957e1a12" style="width: 100.0%; height: 100.0%;"><b>COBRA11</b><br>Type: RC135<br>Mission: SIGINT/Reconnaissance<br>ICAO: ADF001</div>`)[0];
+                popup_1e1a6fb4e5c33cf2bf1dca150623bec6.setContent(html_ef387a33d52b4fb9742dbf0a957e1a12);
+            
+        
+
+        marker_1e512ec9e1828927824c70b651dc55d6.bindPopup(popup_1e1a6fb4e5c33cf2bf1dca150623bec6)
+        ;
+
+        
+    
+    
+            marker_1e512ec9e1828927824c70b651dc55d6.bindTooltip(
+                `<div>
+                     ✈ COBRA11 (RC135)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_1e512ec9e1828927824c70b651dc55d6.setIcon(div_icon_5ce3af692051db41d586bc5d00dbd96b);
+            
+    
+            var marker_60ff8283803a70ddfa46f4166c36a5f6 = L.marker(
+                [27.2, 57.1],
+                {
+}
+            ).addTo(feature_group_2dd8ce1583d8c2824c8f41dd597bc06c);
+        
+    
+            var div_icon_8fac0f311d435dfebc78330ec34e6a29 = L.divIcon({
+  "html": "\u003cdiv style=\"font-size:20px;\"\u003e\u2708\u003c/div\u003e",
+  "iconSize": [20, 20],
+  "className": "empty",
+});
+        
+    
+        var popup_06bbc11e3c5299314d6943c02875adb4 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_e61c6b085adde4e3c0f47e9723e47519 = $(`<div id="html_e61c6b085adde4e3c0f47e9723e47519" style="width: 100.0%; height: 100.0%;"><b>RIVET22</b><br>Type: RC135<br>Mission: SIGINT/Reconnaissance<br>ICAO: ADF002</div>`)[0];
+                popup_06bbc11e3c5299314d6943c02875adb4.setContent(html_e61c6b085adde4e3c0f47e9723e47519);
+            
+        
+
+        marker_60ff8283803a70ddfa46f4166c36a5f6.bindPopup(popup_06bbc11e3c5299314d6943c02875adb4)
+        ;
+
+        
+    
+    
+            marker_60ff8283803a70ddfa46f4166c36a5f6.bindTooltip(
+                `<div>
+                     ✈ RIVET22 (RC135)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_60ff8283803a70ddfa46f4166c36a5f6.setIcon(div_icon_8fac0f311d435dfebc78330ec34e6a29);
+            
+    
+            feature_group_2dd8ce1583d8c2824c8f41dd597bc06c.addTo(map_88ad54633f17db1df83cc5aea9d69e93);
+        
+    
+            var layer_control_fec104f5a29cee53d6226313277b4354_layers = {
+                base_layers : {
+                    "cartodbdarkmatter" : tile_layer_6ef60c7410974643e89676c3a3c939c9,
+                },
+                overlays :  {
+                    "Conflict Intensity" : heat_map_2284b32a61707ee85c522438f5cfb373,
+                    "Conflict Events" : marker_cluster_a6d8d5857a506e2b6bf5b14653da7363,
+                    "ISR / Military Aircraft" : feature_group_2dd8ce1583d8c2824c8f41dd597bc06c,
+                },
+            };
+            let layer_control_fec104f5a29cee53d6226313277b4354 = L.control.layers(
+                layer_control_fec104f5a29cee53d6226313277b4354_layers.base_layers,
+                layer_control_fec104f5a29cee53d6226313277b4354_layers.overlays,
+                {
+  "position": "topright",
+  "collapsed": true,
+  "autoZIndex": true,
+}
+            ).addTo(map_88ad54633f17db1df83cc5aea9d69e93);
+
+        
+</script>
+</html>

@@ -1,0 +1,147 @@
+{
+  "_meta": {
+    "source": "OSINT Tracker — Processed Pipeline Output",
+    "generated_at": "2026-02-28T22:18:44Z",
+    "region": "Iran",
+    "period": {
+      "from": "2026-02-21",
+      "to": "2026-02-28"
+    },
+    "pipeline_version": "1.0.0",
+    "note": "This is the processed output after all four collectors have run, signals have been correlated, anomalies detected, and scores computed. This file drives the HTML map and terminal dashboard."
+  },
+
+  "scores": {
+    "internet": 9.1,
+    "acled": 8.7,
+    "news": 9.2,
+    "aircraft": 8.0,
+    "composite": 8.9,
+    "status": "🔴 HIGH ACTIVITY DETECTED"
+  },
+
+  "signals": {
+    "internet": {
+      "raw_score": 0.91,
+      "normalised": 0.91,
+      "data_points": 288,
+      "baseline": 1841.2,
+      "min_observed": 68,
+      "outage_score": 0.91,
+      "is_anomaly": true,
+      "severity": "CRITICAL",
+      "description": "Severe internet outage — 91% connectivity loss detected"
+    },
+
+    "acled": {
+      "raw_score": 40,
+      "normalised": 0.87,
+      "total_events": 47,
+      "explosion_count": 40,
+      "total_fatalities": 234,
+      "is_anomaly": true,
+      "severity": "CRITICAL",
+      "description": "40 explosions/battles — intensive conflict activity",
+      "hotspots": [
+        { "location": "Tehran",  "count": 18 },
+        { "location": "Isfahan", "count": 9  },
+        { "location": "Natanz",  "count": 6  },
+        { "location": "Bushehr", "count": 4  },
+        { "location": "Tabriz",  "count": 3  }
+      ],
+      "events_by_type": {
+        "Explosions/Remote violence": 31,
+        "Battles": 9,
+        "Strategic developments": 5,
+        "Protests": 2
+      },
+      "events_by_date": {
+        "2026-02-21": 1,
+        "2026-02-22": 2,
+        "2026-02-23": 1,
+        "2026-02-24": 2,
+        "2026-02-25": 3,
+        "2026-02-26": 4,
+        "2026-02-27": 16,
+        "2026-02-28": 18
+      }
+    },
+
+    "news": {
+      "raw_score": 9.2,
+      "normalised": 0.91,
+      "total_articles": 847,
+      "source_count": 94,
+      "spike_multiplier": 9.2,
+      "is_anomaly": true,
+      "severity": "CRITICAL",
+      "description": "News volume 9.2x baseline",
+      "top_keywords": {
+        "Iran military": 312,
+        "Operation Epic Fury": 287,
+        "IRGC": 198,
+        "Tehran strike": 176,
+        "Iran nuclear": 143
+      },
+      "by_date": {
+        "2026-02-21": 18,
+        "2026-02-22": 21,
+        "2026-02-23": 19,
+        "2026-02-24": 23,
+        "2026-02-25": 31,
+        "2026-02-26": 45,
+        "2026-02-27": 89,
+        "2026-02-28": 412,
+        "2026-03-01": 189
+      }
+    },
+
+    "aircraft": {
+      "raw_score": 12,
+      "normalised": 0.80,
+      "total_tracked": 34,
+      "military_count": 12,
+      "isr_count": 4,
+      "is_anomaly": true,
+      "severity": "HIGH",
+      "description": "4 ISR/SIGINT aircraft | 12 military flights",
+      "isr_spotted": [
+        {
+          "hex": "ADF001",
+          "callsign": "COBRA11",
+          "type": "RC135",
+          "mission": "SIGINT/Reconnaissance",
+          "lat": 26.8,
+          "lon": 56.2
+        },
+        {
+          "hex": "ADF002",
+          "callsign": "RIVET22",
+          "type": "RC135",
+          "mission": "SIGINT/Reconnaissance",
+          "lat": 27.2,
+          "lon": 57.1
+        },
+        {
+          "hex": "AE1234",
+          "callsign": "JAKE11",
+          "type": "KC135",
+          "mission": "Air-to-Air Refuelling (indicates extended ops)",
+          "lat": 27.1,
+          "lon": 55.3
+        },
+        {
+          "hex": "AE5678",
+          "callsign": "ODIN41",
+          "type": "E3",
+          "mission": "AWACS (airborne surveillance)",
+          "lat": 26.4,
+          "lon": 53.8
+        }
+      ]
+    }
+  },
+
+  "map_output": "data/processed/iran_20260228_2218.html",
+  "pipeline_duration_seconds": 12.4
+}

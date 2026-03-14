@@ -1,0 +1,79 @@
+# ─────────────────────────────────────────────
+# Regions of Interest Configuration
+# Bounding boxes: [min_lat, min_lon, max_lat, max_lon]
+# ─────────────────────────────────────────────
+
+regions:
+  iran:
+    name: "Iran"
+    bbox: [25.0, 44.0, 39.8, 63.3]
+    center: [32.4, 53.7]
+    acled_country: "Iran"
+    news_keywords:
+      - "Iran military"
+      - "IRGC"
+      - "Tehran strike"
+      - "Operation Epic Fury"
+      - "Iran nuclear"
+    internet_asns:
+      - "AS48159"   # TCI (Telecom Infrastructure Company of Iran)
+      - "AS197207"  # Mobile Communication Company of Iran
+      - "AS44244"   # Iran Cell
+
+  israel:
+    name: "Israel"
+    bbox: [29.5, 34.2, 33.3, 35.9]
+    center: [31.5, 34.8]
+    acled_country: "Israel"
+    news_keywords:
+      - "IDF strike"
+      - "Israel military"
+      - "Iron Dome"
+      - "Tel Aviv attack"
+    internet_asns:
+      - "AS1680"    # Cellcom Fixed Line
+      - "AS8551"    # Bezeq International
+
+  strait_of_hormuz:
+    name: "Strait of Hormuz"
+    bbox: [25.5, 56.0, 27.0, 57.5]
+    center: [26.5, 56.8]
+    acled_country: "Iran"
+    news_keywords:
+      - "Strait of Hormuz"
+      - "tanker seized"
+      - "Persian Gulf incident"
+      - "US Navy Gulf"
+    internet_asns: []
+
+  gulf_states:
+    name: "Gulf States (UAE/Qatar/Bahrain)"
+    bbox: [24.0, 50.5, 26.5, 56.5]
+    center: [25.2, 53.0]
+    acled_country: "United Arab Emirates"
+    news_keywords:
+      - "US base Gulf"
+      - "Al Udeid"
+      - "Fifth Fleet"
+      - "Bahrain attack"
+    internet_asns:
+      - "AS15802"   # Du (Emirates Integrated Telecommunications)
+      - "AS5384"    # Emirates Telecommunications (Etisalat)
+
+# ─────────────────────────────────────────────
+# Anomaly detection thresholds
+# ─────────────────────────────────────────────
+thresholds:
+  internet_outage_percent: 20       # % drop to flag as anomaly
+  news_volume_spike_multiplier: 3.0 # 3x normal volume = anomaly
+  acled_event_spike_percent: 50     # 50% increase in events
+  flight_count_spike_percent: 40    # 40% increase in tracked flights
+
+# ─────────────────────────────────────────────
+# Composite score weights (must sum to 1.0)
+# ─────────────────────────────────────────────
+scoring_weights:
+  internet: 0.30
+  acled: 0.30
+  news: 0.20
+  aircraft: 0.20

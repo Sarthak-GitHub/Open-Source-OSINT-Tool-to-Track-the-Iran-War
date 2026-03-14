@@ -1,0 +1,88 @@
+version: "3.9"
+
+# ─────────────────────────────────────────────────────────────────────────────
+# OSINT Tracker — Docker Compose
+#
+# Usage:
+#   docker-compose up osint-run              ← one-off pipeline run
+#   docker-compose up osint-scheduler        ← runs every 6 hours
+#   docker-compose run osint-run --region israel --days 3
+#   docker-compose --profile test up         ← run test suite
+#   docker-compose --profile dev up          ← interactive shell
+# ─────────────────────────────────────────────────────────────────────────────
+
+x-base: &base
+  build:
+    context: .
+    dockerfile: Dockerfile
+  env_file:
+    - .env
+  volumes:
+    - ./data:/app/data
+    - ./config:/app/config
+
+services:
+
+  # One-off pipeline run (default)
+  osint-run:
+    <<: *base
+    container_name: osint-tracker-run
+    command: ["--region", "iran", "--days", "7", "--output", "both"]
+    restart: "no"
+
+  # Scheduled every 6 hours
+  osint-scheduler:
+    <<: *base
+    container_name: osint-tracker-scheduler
+    entrypoint: >
+      sh -c "
+        echo 'OSINT Tracker Scheduler started';
+        while true; do
+          python main.py --region iran --days 1 --output both;
+          echo 'Next run in 6 hours';
+          sleep 21600;
+        done
+      "
+    restart: unless-stopped
+    profiles: [scheduled]
+
+  # Multi-region parallel runs
+  osint-iran:
+    <<: *base
+    container_name: osint-iran
+    command: ["--region", "iran", "--days", "7"]
+    restart: "no"
+    profiles: [multi]
+
+  osint-israel:
+    <<: *base
+    container_name: osint-israel
+    command: ["--region", "israel", "--days", "7"]
+    restart: "no"
+    profiles: [multi]
+
+  osint-hormuz:
+    <<: *base
+    container_name: osint-hormuz
+    command: ["--region", "strait_of_hormuz", "--days", "7"]
+    restart: "no"
+    profiles: [multi]
+
+  # Test runner
+  osint-test:
+    <<: *base
+    container_name: osint-tracker-test
+    entrypoint: ["python", "-m", "pytest"]
+    command: ["tests/", "-v", "--tb=short"]
+    restart: "no"
+    profiles: [test]
+
+  # Interactive shell for debugging
+  osint-shell:
+    <<: *base
+    container_name: osint-tracker-shell
+    entrypoint: ["/bin/bash"]
+    stdin_open: true
+    tty: true
+    restart: "no"
+    profiles: [dev]

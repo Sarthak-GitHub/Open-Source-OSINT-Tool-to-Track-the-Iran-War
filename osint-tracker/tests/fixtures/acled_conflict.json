@@ -1,0 +1,92 @@
+{
+  "_fixture": "acled_conflict — high activity, 12 events, all explosions/battles",
+  "status": 1,
+  "success": true,
+  "count": 12,
+  "data": [
+    {
+      "event_id_cnty": "IRN9821", "event_date": "2026-02-28",
+      "event_type": "Explosions/Remote violence", "sub_event_type": "Air/drone strike",
+      "country": "Iran", "admin1": "Tehran", "location": "Tehran",
+      "latitude": "35.6892", "longitude": "51.3890", "fatalities": "0",
+      "notes": "Airstrike on IRGC HQ"
+    },
+    {
+      "event_id_cnty": "IRN9822", "event_date": "2026-02-28",
+      "event_type": "Explosions/Remote violence", "sub_event_type": "Air/drone strike",
+      "country": "Iran", "admin1": "Isfahan", "location": "Isfahan",
+      "latitude": "32.6546", "longitude": "51.6680", "fatalities": "0",
+      "notes": "Strike near nuclear facility"
+    },
+    {
+      "event_id_cnty": "IRN9823", "event_date": "2026-02-28",
+      "event_type": "Explosions/Remote violence", "sub_event_type": "Air/drone strike",
+      "country": "Iran", "admin1": "Isfahan", "location": "Natanz",
+      "latitude": "33.7219", "longitude": "51.8668", "fatalities": "0",
+      "notes": "Enrichment facility targeted"
+    },
+    {
+      "event_id_cnty": "IRN9824", "event_date": "2026-02-28",
+      "event_type": "Battles", "sub_event_type": "Armed clash",
+      "country": "Iran", "admin1": "Tehran", "location": "Tehran",
+      "latitude": "35.7100", "longitude": "51.4200", "fatalities": "8",
+      "notes": "Air defense engagement"
+    },
+    {
+      "event_id_cnty": "IRN9825", "event_date": "2026-02-28",
+      "event_type": "Explosions/Remote violence", "sub_event_type": "Shelling/artillery/missile attack",
+      "country": "Iran", "admin1": "Khuzestan", "location": "Ahvaz",
+      "latitude": "31.3183", "longitude": "48.6706", "fatalities": "3",
+      "notes": "Military base targeted"
+    },
+    {
+      "event_id_cnty": "IRN9826", "event_date": "2026-02-28",
+      "event_type": "Explosions/Remote violence", "sub_event_type": "Air/drone strike",
+      "country": "Iran", "admin1": "Bushehr", "location": "Bushehr",
+      "latitude": "28.9688", "longitude": "50.8385", "fatalities": "2",
+      "notes": "Nuclear plant perimeter"
+    },
+    {
+      "event_id_cnty": "IRN9827", "event_date": "2026-02-28",
+      "event_type": "Explosions/Remote violence", "sub_event_type": "Air/drone strike",
+      "country": "Iran", "admin1": "Razavi Khorasan", "location": "Mashhad",
+      "latitude": "36.2605", "longitude": "59.6168", "fatalities": "0",
+      "notes": "IRGC eastern command"
+    },
+    {
+      "event_id_cnty": "IRN9828", "event_date": "2026-02-28",
+      "event_type": "Battles", "sub_event_type": "Air/drone strike",
+      "country": "Iran", "admin1": "East Azerbaijan", "location": "Tabriz",
+      "latitude": "38.0800", "longitude": "46.2919", "fatalities": "1",
+      "notes": "Missile battery destroyed"
+    },
+    {
+      "event_id_cnty": "IRN9829", "event_date": "2026-02-28",
+      "event_type": "Explosions/Remote violence", "sub_event_type": "Remote explosive/landmine/IED",
+      "country": "Iran", "admin1": "Tehran", "location": "Tehran",
+      "latitude": "35.6500", "longitude": "51.3600", "fatalities": "0",
+      "notes": "Secondary explosion downtown"
+    },
+    {
+      "event_id_cnty": "IRN9830", "event_date": "2026-02-28",
+      "event_type": "Explosions/Remote violence", "sub_event_type": "Air/drone strike",
+      "country": "Iran", "admin1": "Semnan", "location": "Shahroud",
+      "latitude": "36.4182", "longitude": "54.9762", "fatalities": "0",
+      "notes": "Ballistic missile site"
+    },
+    {
+      "event_id_cnty": "IRN9831", "event_date": "2026-02-27",
+      "event_type": "Explosions/Remote violence", "sub_event_type": "Air/drone strike",
+      "country": "Iran", "admin1": "Isfahan", "location": "Isfahan",
+      "latitude": "32.6800", "longitude": "51.7200", "fatalities": "0",
+      "notes": "Precursor strike day before main operation"
+    },
+    {
+      "event_id_cnty": "IRN9832", "event_date": "2026-02-27",
+      "event_type": "Strategic developments", "sub_event_type": "Looting/property destruction",
+      "country": "Iran", "admin1": "Tehran", "location": "Tehran",
+      "latitude": "35.6892", "longitude": "51.3890", "fatalities": "0",
+      "notes": "Evacuation of key personnel observed"
+    }
+  ]
+}

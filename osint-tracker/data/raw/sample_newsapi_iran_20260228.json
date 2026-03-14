@@ -1,0 +1,58 @@
+{
+  "_meta": {
+    "source": "NewsAPI — https://newsapi.org",
+    "api_endpoint": "https://newsapi.org/v2/everything",
+    "fetched_at": "2026-02-28T22:16:02Z",
+    "query": "\"Iran military\" OR \"IRGC\" OR \"Tehran strike\" OR \"Operation Epic Fury\"",
+    "note": "SAMPLE file showing what raw NewsAPI responses look like."
+  },
+  "status": "ok",
+  "totalResults": 847,
+  "articles": [
+    {
+      "source": { "id": "reuters", "name": "Reuters" },
+      "author": "Reuters Staff",
+      "title": "US and Israel launch strikes on Iran nuclear facilities in Operation Epic Fury",
+      "description": "The United States and Israel launched a major military operation against Iran targeting nuclear enrichment sites and IRGC command infrastructure.",
+      "url": "https://reuters.com/world/middle-east/us-israel-iran-strikes-2026-02-28",
+      "publishedAt": "2026-02-28T06:14:00Z",
+      "content": "WASHINGTON/TEL AVIV — The United States and Israel launched coordinated airstrikes against Iran early on Saturday..."
+    },
+    {
+      "source": { "id": "bbc-news", "name": "BBC News" },
+      "author": "BBC World Service",
+      "title": "Iran: Supreme Leader Khamenei killed in US-Israel strikes",
+      "description": "Iran's Supreme Leader Ali Khamenei was killed in the opening hours of a joint US-Israeli military operation targeting Iranian leadership and nuclear facilities.",
+      "url": "https://bbc.com/news/world-middle-east-iran-strikes-2026",
+      "publishedAt": "2026-02-28T08:31:00Z",
+      "content": "Iran's Supreme Leader Ali Khamenei has been killed following targeted strikes by US and Israeli forces..."
+    },
+    {
+      "source": { "id": "al-jazeera-english", "name": "Al Jazeera English" },
+      "author": "Al Jazeera Staff",
+      "title": "Tehran under attack: Explosions rock Iranian capital",
+      "description": "Multiple explosions reported across Tehran as US and Israeli forces conduct the most extensive military campaign against Iran in history.",
+      "url": "https://aljazeera.com/news/2026/2/28/tehran-explosions",
+      "publishedAt": "2026-02-28T05:48:00Z",
+      "content": "Large explosions have been reported across Tehran and other Iranian cities..."
+    },
+    {
+      "source": { "id": "the-washington-post", "name": "The Washington Post" },
+      "author": "Washington Post Staff",
+      "title": "AI selected 1,000 Iranian targets in 24 hours, Pentagon officials say",
+      "description": "Palantir's Maven Smart System, containing Anthropic's Claude AI, helped US commanders select targets at unprecedented scale during the Iran operation.",
+      "url": "https://washingtonpost.com/national-security/2026/03/01/ai-iran-targets",
+      "publishedAt": "2026-03-01T14:22:00Z",
+      "content": "US military artificial intelligence systems played an unprecedented role in the Iran strikes..."
+    },
+    {
+      "source": { "id": "ap", "name": "Associated Press" },
+      "author": "AP Staff",
+      "title": "Iran internet goes dark as strikes begin",
+      "description": "Internet monitoring groups reported Iranian connectivity dropped to near-zero levels as strikes began, consistent with either physical damage to infrastructure or government shutdown.",
+      "url": "https://apnews.com/article/iran-internet-outage-strikes-2026",
+      "publishedAt": "2026-02-28T07:03:00Z",
+      "content": "Iran's internet connectivity collapsed to approximately 4% of normal levels..."
+    }
+  ]
+}

@@ -1,0 +1,77 @@
+{
+  "_fixture": "newsapi_spike — 9x volume spike on Feb 28 (conflict day)",
+  "status": "ok",
+  "totalResults": 847,
+  "articles": [
+    {
+      "source": { "name": "Reuters" },
+      "title": "US and Israel launch strikes on Iran in Operation Epic Fury",
+      "publishedAt": "2026-02-28T06:14:00Z",
+      "description": "Coordinated airstrikes target Iranian nuclear and military infrastructure.",
+      "content": "The United States and Israel launched..."
+    },
+    {
+      "source": { "name": "BBC News" },
+      "title": "Supreme Leader Khamenei killed in US-Israel strikes",
+      "publishedAt": "2026-02-28T08:31:00Z",
+      "description": "Iran's Supreme Leader killed in opening hours of joint operation.",
+      "content": "Iran's Supreme Leader..."
+    },
+    {
+      "source": { "name": "Al Jazeera English" },
+      "title": "Tehran under attack: Multiple explosions rock Iranian capital",
+      "publishedAt": "2026-02-28T05:48:00Z",
+      "description": "Explosions reported across Tehran as strikes begin.",
+      "content": "Large explosions..."
+    },
+    {
+      "source": { "name": "Washington Post" },
+      "title": "AI system selected 1,000 Iranian targets in 24 hours",
+      "publishedAt": "2026-03-01T14:22:00Z",
+      "description": "Palantir Maven system processed targeting data at unprecedented scale.",
+      "content": "US military artificial intelligence..."
+    },
+    {
+      "source": { "name": "AP" },
+      "title": "Iran internet collapses as strikes begin — IODA",
+      "publishedAt": "2026-02-28T07:03:00Z",
+      "description": "Internet monitoring groups report Iran connectivity at 4% of normal.",
+      "content": "Iran's internet connectivity..."
+    },
+    {
+      "source": { "name": "NYT" },
+      "title": "Iran strikes: What we know about Operation Epic Fury",
+      "publishedAt": "2026-02-28T09:15:00Z",
+      "description": "A live tracker of events in the US-Israel operation against Iran.",
+      "content": "Live updates..."
+    },
+    {
+      "source": { "name": "CNN" },
+      "title": "Iran War: Live updates",
+      "publishedAt": "2026-02-28T06:00:00Z",
+      "description": "Follow live coverage of the Iran military operation.",
+      "content": "CNN is following developments..."
+    },
+    {
+      "source": { "name": "Guardian" },
+      "title": "World reacts to Iran strikes: China and Russia condemn operation",
+      "publishedAt": "2026-02-28T12:00:00Z",
+      "description": "International reaction pours in as Iran conflict escalates.",
+      "content": "World leaders reacted..."
+    },
+    {
+      "source": { "name": "Haaretz" },
+      "title": "IDF confirms strikes on Natanz, Fordow enrichment facilities",
+      "publishedAt": "2026-02-28T10:30:00Z",
+      "description": "Israel's military confirms successful strikes on Iranian nuclear sites.",
+      "content": "The Israel Defense Forces..."
+    },
+    {
+      "source": { "name": "Financial Times" },
+      "title": "Oil price spikes 40% on Iran conflict news",
+      "publishedAt": "2026-02-28T08:00:00Z",
+      "description": "Crude oil surges as Strait of Hormuz threatened.",
+      "content": "Oil markets reacted sharply..."
+    }
+  ]
+}

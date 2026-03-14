@@ -1,0 +1,42 @@
+{
+  "_fixture": "newsapi_baseline — normal low-volume week, ~5 articles/day",
+  "status": "ok",
+  "totalResults": 34,
+  "articles": [
+    {
+      "source": { "name": "Reuters" },
+      "title": "Iran holds talks with European diplomats",
+      "publishedAt": "2026-02-21T10:00:00Z",
+      "description": "Iranian officials met with EU representatives in Vienna.",
+      "content": "Diplomatic talks continued..."
+    },
+    {
+      "source": { "name": "AP" },
+      "title": "IAEA inspectors visit Iranian nuclear sites",
+      "publishedAt": "2026-02-22T14:00:00Z",
+      "description": "UN nuclear inspectors conducted routine monitoring.",
+      "content": "Inspectors from the International Atomic Energy Agency..."
+    },
+    {
+      "source": { "name": "BBC News" },
+      "title": "Iran economy shows signs of strain under sanctions",
+      "publishedAt": "2026-02-23T09:00:00Z",
+      "description": "Iranian rial continues to weaken amid ongoing sanctions.",
+      "content": "Iran's currency..."
+    },
+    {
+      "source": { "name": "Al Jazeera English" },
+      "title": "Iran military holds annual exercise in Persian Gulf",
+      "publishedAt": "2026-02-24T11:00:00Z",
+      "description": "IRGC Navy conducted its scheduled annual naval exercise.",
+      "content": "Iranian forces..."
+    },
+    {
+      "source": { "name": "Reuters" },
+      "title": "Iran nuclear talks resume in Geneva",
+      "publishedAt": "2026-02-25T16:00:00Z",
+      "description": "Negotiations over Iran's nuclear program resumed.",
+      "content": "Diplomats from Iran and world powers..."
+    }
+  ]
+}
